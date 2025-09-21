@@ -16,7 +16,25 @@ Proyek ini adalah bagian backend (API) dari sistem manufaktur yang dibangun deng
 
 Berikut adalah diagram hubungan entitas (ERD) yang menggambarkan tabel-tabel utama dalam database proyek ini.
 
+1.  **`users`**:
+    * **Tujuan**: Menyimpan data pengguna.
+    * **Relasi**: Berhubungan **satu ke banyak** dengan `production_plans` (seorang user bisa membuat banyak rencana) dan `production_logs` (seorang user bisa membuat banyak log).
 
+2.  **`products`**:
+    * **Tujuan**: Menyimpan data master produk.
+    * **Relasi**: Berhubungan **satu ke banyak** dengan `production_plans` (satu produk bisa ada di banyak rencana produksi).
+
+3.  **`production_plans`**:
+    * **Tujuan**: Menyimpan rencana produksi yang dibuat oleh Staff PPIC.
+    * **Relasi**: Berhubungan **satu ke satu** dengan `production_orders` (satu rencana yang disetujui akan menjadi satu order).
+
+4.  **`production_orders`**:
+    * **Tujuan**: Menyimpan order produksi yang disetujui, siap untuk dikerjakan.
+    * **Relasi**: Berhubungan **satu ke banyak** dengan `production_logs` (satu order bisa memiliki banyak entri log).
+
+5.  **`production_logs`**:
+    * **Tujuan**: Menyimpan riwayat perubahan status pada order produksi.
+    * **Relasi**: Berhubungan **banyak ke satu** dengan `production_orders` (banyak log merujuk ke satu order) dan `users` (banyak log dibuat oleh satu user).
 
 ## Persyaratan Sistem
 
