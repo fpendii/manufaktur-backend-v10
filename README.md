@@ -28,7 +28,7 @@ Berikut adalah diagram hubungan entitas (ERD) yang menggambarkan tabel-tabel uta
 
 1.  **Kloning Repositori**:
     ```bash
-    git clone [https://github.com/username/manufaktur-backend-v10.git](https://github.com/username/manufaktur-backend-v10.git)
+    git clone https://github.com/fpendii/manufaktur-backend-v10.git
     cd manufaktur-backend-v10
     ```
 
